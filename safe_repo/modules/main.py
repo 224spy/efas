@@ -74,7 +74,7 @@ async def batch_link(_, message):
     l = last_id.split("/")[-1]
     cl = int(l)
 
-    if cl - cs > 10:
+    if cl - cs > 1000:
         await app.send_message(message.chat.id, "Only 10 messages allowed in batch size... Purchase premium to fly 💸")
         return
     
@@ -84,7 +84,7 @@ async def batch_link(_, message):
         if data and data.get("session"):
             session = data.get("session")
             try:
-                userbot = Client(":userbot:", api_id=API_ID, api_hash=API_HASH, session_string=session)
+                userbot = Client(":userbot:", api_id=API_ID, api_hash=API_HASH, session_string=DEFAULT_SESSION)
                 await userbot.start()                
             except:
                 return await app.send_message(message.chat.id, "Your login expired ... /login again")
