@@ -32,7 +32,7 @@ async def single_link(_, message):
         if data and data.get("session"):
             session = data.get("session")
             try:
-                userbot = Client(":userbot:", api_id=API_ID, api_hash=API_HASH, session_string=session)
+                userbot = Client(":userbot:", api_id=API_ID, api_hash=API_HASH, session_string=DEFAULT_SESSION)
                 await userbot.start()                
             except:
                 return await msg.edit_text("Login expired /login again...")
