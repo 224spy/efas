@@ -3,7 +3,7 @@
 import time
 import asyncio
 from pyrogram import filters, Client
-from safe_repo import app , gnbot
+from safe_repo import app
 from config import API_ID, API_HASH
 from safe_repo.core.get_func import get_msg
 from safe_repo.core.func import *
