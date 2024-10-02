@@ -32,7 +32,7 @@ async def single_link(_, message):
         if data and data.get("session"):
             session = data.get("session")
             try:
-                userbot = Client(":userbot:", api_id=API_ID, api_hash=API_HASH, session_string=DEFAULT_SESSION)
+                userbot = Client(":userbot:", api_id=API_ID, api_hash=API_HASH, session_string=session)
                 await userbot.start()                
             except:
                 return await msg.edit_text("Login expired /login again...")
@@ -84,7 +84,7 @@ async def batch_link(_, message):
         if data and data.get("session"):
             session = data.get("session")
             try:
-                userbot = Client(":userbot:", api_id=API_ID, api_hash=API_HASH, session_string=DEFAULT_SESSION)
+                userbot = Client(":userbot:", api_id=API_ID, api_hash=API_HASH, session_string=session)
                 await userbot.start()                
             except:
                 return await app.send_message(message.chat.id, "Your login expired ... /login again")
